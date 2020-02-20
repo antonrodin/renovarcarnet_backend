@@ -5,6 +5,10 @@ const Model = Sequelize.Model;
 class Provincia extends Model { }
 
 Provincia.init({
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true
+    },
     nombre: Sequelize.STRING,
     descripcion: Sequelize.TEXT,
     slug: Sequelize.STRING,
