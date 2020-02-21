@@ -16,9 +16,14 @@ Provincia.init({
     lng: Sequelize.FLOAT
 }, {
     sequelize,
-    modelName: "provincia",
+    freezeTableName: true,
+    tableName: "provincia",
     underscored: true,
-    timestamps: false
+    timestamps: false,
+    name: {
+        singular: "provincia",
+        plural: "provincias"
+    }
 });
 
 module.exports = Provincia;

@@ -15,9 +15,14 @@ Municipio.init({
     longitud: Sequelize.FLOAT
 }, {
     sequelize,
-    modelName: "municipios",
+    freezeTableName: true,
+    tableName: "municipios",
     underscored: true,
-    timestamps: false
+    timestamps: false,
+    name: {
+        singular: "municipio",
+        plural: "municipios"
+    }
 });
 
 module.exports = Municipio;
