@@ -16,6 +16,7 @@ module.exports = sequelize;
 const User = require('./models/User');
 const Provincia = require('./models/Provincia');
 const Municipio = require('./models/Municipio');
+const Marcador = require('./models/Marcador');
 
 // Relationship
 Municipio.belongsTo(Provincia, {

@@ -6,6 +6,7 @@ const Provincia = require('../../database/models/Provincia');
 router.use('/users', require('./users'));
 router.use('/provincias', require('./provincias'));
 router.use('/municipios', require('./municipios'));
+router.use('/marcadores', require('./marcadores'));
 
 // Show all provincias
 router.get('/provincias', (req, res) => {

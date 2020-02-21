@@ -11,11 +11,12 @@ router.get('/:id', (req, res) => {
         include: {
             model: Provincia
         }
-    }).then(municipio => {
-    
-        
-        res.json(municipio);
-    })
+    }).then(municipio => { 
+        if(municipio != null) res.json(municipio);
+        res.json({});
+    }).catch(err => {
+        res.json({ err: err });
+    });
 })
 
 module.exports = router;

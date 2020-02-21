@@ -3,7 +3,7 @@ const router = express.Router();
 const Provincia = require('../../database/models/Provincia');
 const Municipio = require('../../database/models/Municipio');
 
-router.get('/all', (req, res) => {
+router.get('/', (req, res) => {
     Provincia.findAll().then(provincias => {
         res.json(provincias);
     });
@@ -16,7 +16,8 @@ router.get('/:id', (req, res) => {
         },
         include: Municipio
     }).then(provincias => {
-        res.json(provincias);
+        if(provincias != null) res.json(provincias);
+        res.json({});
     });
 })
 

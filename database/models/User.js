@@ -10,8 +10,13 @@ User.init({
     password: Sequelize.STRING
 }, {
     sequelize,
-    modelName: "users",
-    underscored: true
+    freezeTableName: true,
+    tableName: "users",
+    underscored: true,
+    name: {
+        singular: "user",
+        plural: "users"
+    }
 });
 
 module.exports = User;
