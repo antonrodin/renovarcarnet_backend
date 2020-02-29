@@ -18,10 +18,12 @@ const Provincia = require('./models/Provincia');
 const Municipio = require('./models/Municipio');
 const Marcador = require('./models/Marcador');
 
-// Relationship
-Municipio.belongsTo(Provincia, {
-    foreignKey: "provincia_id"
-});
-Provincia.hasMany(Municipio, {
-    foreignKey: "provincia_id"
-});
+/**
+ * Relationships
+ */
+Municipio.belongsTo(Provincia, { foreignKey: "provincia_id" });
+Provincia.hasMany(Municipio, { foreignKey: "provincia_id" });
+
+// Marcador relationships
+Marcador.belongsTo(Municipio, { foreignKey: "municipio_id" });
+Marcador.belongsTo(Provincia, { foreignKey: "provincia_id" });

@@ -7,9 +7,11 @@ class Marcador extends Model { }
 Marcador.init({
     nombre: Sequelize.STRING,
     slug: Sequelize.STRING,
+    otros: Sequelize.TEXT,
+    cp: Sequelize.STRING,
+    direccion: Sequelize.STRING,
     lat: Sequelize.FLOAT,
-    lng: Sequelize.FLOAT,
-    user_id: Sequelize.INTEGER
+    lng: Sequelize.FLOAT
 }, {
     sequelize,
     freezeTableName: true,
