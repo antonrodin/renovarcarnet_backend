@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
         order: [
             ['id', 'desc']
         ],
-        include: [{ model: Municipio }, { model: Provincia }]
+        include: [ Municipio, Provincia ]
     }).then(result => {
         res.json({
             pageIndex: parseInt(req.query.pageIndex),
@@ -44,7 +44,24 @@ router.get('/:id', (req, res) => {
         }
     }).then(marcador => {
         res.json(marcador);
+    }).err(err => {
+        res.json({ err: err });
     })
+});
+
+/**
+ * Update marcador
+ */
+router.put('/', (req, res) => {
+    
+    Marcador.update(req.body, { where: { id: req.body.id } })
+    .then(result => {
+        res.json(result);
+    })
+    .catch(err => {
+        res.json({ err: err });
+    });
+
 });
 
 module.exports = router;
