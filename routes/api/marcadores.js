@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
         }
     }).then(marcador => {
         res.json(marcador);
-    }).err(err => {
+    }).catch(err => {
         res.json({ err: err });
     })
 });
